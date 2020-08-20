@@ -1,0 +1,52 @@
+Que(11) Can we apply Binary search algorithm to a sorted Linked list?
+Ans=Yes, Binary search is possible on the linked list if the list is sorted and you know the count of elements in list.
+
+Que(12) When can you tell that a Memory Leak will occur?
+Ans=Memory leak occurs when programmers create a memory in heap and forget to delete it.
+Memory leaks are particularly serious issues for programs like daemons and servers which by definition never terminate.
+
+Que(13) How will you check if a given Binary Tree is a Binary Search Tree or not?
+Ans=A Binary Search Tree (BST) is a binary tree with the following properties:
+
+The left subtree of a particular node will always contain nodes whose keys are less than that node’s key.
+
+The right subtree of a particular node will always contain nodes with keys greater than that node’s key.
+
+The left and right subtree of a particular node will also, in turn, be binary search trees.
+
+The tree on the right is a BST.
+
+
+Que(14) Which data structure is ideal to perform recursion operation and why?
+Ans=Stack is ideal to perform recursion operation . Because of its LIFO (Last In First Out) property it remembers
+ its ‘caller’ so knows whom to return when the function has to return. Recursion makes use of system stack for storing 
+the return addresses of the function calls.
+
+Que(15) What are some of the most important applications of a Stack?
+Ans=Some of the most important applications of a Stack are as follows :
+1) Expression Handling : The stack can be used to convert some infix expression into its postfix equivalent, or prefix 
+equivalent. These postfix or prefix notations are used in computers to express some expressions. These expressions 
+are not so much familiar to the infix expression, but they have some great advantages also. We do not need to maintain
+ operator ordering, and parenthesis. After converting into prefix or postfix notations, we have to evaluate the expression to 
+get the result. For that purpose, also we need the help of stack data structure.
+2) Backtracking : Backtracking is one of the algorithm designing technique. For that purpose, we dive into some way, if that 
+way is not efficient, we come back to the previous state and go into some other paths. To get back from current state, we need
+ to store the previous state. For that purpose, we need stack. Some examples of backtracking is finding the solution for Knight
+ Tour problem or N-Queen Problem etc.
+3) Recursion : Recursion is a process where a function iteratively calls itself until a base case is reached. An example of
+ recursion is finding the fatorial of a number.
+
+Que(16) Convert the below given expression to its equivalent Prefix And Postfix notations.
+Ans=Expression : a+b*(c^d-e)^(f+g*h)-i
+Postfix : abcd^e-fgh*+^*+i-
+Prefix : +a-*b^-^cde+f*gh
+
+Que(17)Sorting a stack using a temporary stack.
+Ans=To sort a stack using a temporary stack follow the following algorithm :
+1) Create a temporary stack say tmpStack.
+2) While input stack is NOT empty do this:
+	i) Pop an element from input stack call it temp
+	ii) while temporary stack is NOT empty and top of temporary stack is greater than temp,
+	pop from temporary stack and push it to the input stack
+	iii) push temp in temporary stack
+3) The sorted numbers are in tmpStack
