@@ -1,0 +1,154 @@
+Que(1) What do you mean by a Data structure?
+Ans=Data structure, way in which data are stored for efficient search and retrieval. 
+     Different data structures are suited for different problems. Some data structures are useful for simple general problems,
+     such as retrieving data that has been stored with a specific identifier. For example, an online dictionary can be structured
+     so that it can retrieve the definition of a word. On the other hand, specialized data structures have been devised to solve 
+     complex specific search problems.
+Que(2)What are some of the applications of DS?
+Ans=Data Structure is used in CPU scheduling.
+        Data Structure is used in Syntax Parsing.
+        Data Structure is used as a forward and Backend feature in web browsers.
+        Data Structure is used in Palindrome recognization. 
+        Data Structure is used in computer networks.
+        Data Structure is used to organize code and information in a digital space.
+Que(3)What are the advantages of a Linked list over an array?
+Ans=Advantages of linked lists over arrays are:
+
+1)Size of the list doesn't need to be mentioned at the beginning of the program, certainly dynamic memory allocation and 
+deallocation.
+2)As the linked list doesn't have a size limit, we can go on adding new nodes (elements) and increasing the size of
+ the list to any extent.
+Que(4)Write the syntax in C to create a node in the singly linked list.
+Ans=
+#include <stdio.h>  
+#include <stdlib.h>  
+//Represent a node of singly linked list  
+struct node{  
+    int data;  
+    struct node *next;  
+};      
+   
+//Represent the head and tail of the singly linked list  
+struct node *head, *tail = NULL;  
+   
+//addNode() will add a new node to the list  
+void addNode(int data) {  
+    //Create a new node  
+    struct node *newNode = (struct node*)malloc(sizeof(struct node));  
+    newNode->data = data;  
+    newNode->next = NULL;  
+      
+    //Checks if the list is empty  
+    if(head == NULL) {  
+        //If list is empty, both head and tail will point to new node  
+        head = newNode;  
+        tail = newNode;  
+    }  
+    else {  
+        //newNode will be added after tail such that tail's next will point to newNode  
+        tail->next = newNode;  
+        //newNode will become new tail of the list  
+        tail = newNode;  
+    }  
+}  
+   
+//display() will display all the nodes present in the list  
+void display() {  
+    //Node current will point to head  
+    struct node *current = head;  
+      
+    if(head == NULL) {  
+        printf("List is empty\n");  
+        return;  
+    }  
+    printf("Nodes of singly linked list: \n");  
+    while(current != NULL) {  
+        //Prints each node by incrementing pointer  
+        printf("%d ", current->data);  
+        current = current->next;  
+    }  
+    printf("\n");  
+}  
+      
+int main()  
+{  
+    //Add nodes to the list  
+    addNode(1);  
+    addNode(2);  
+    addNode(3);  
+    addNode(4);  
+      
+    //Displays the nodes present in the list  
+    display();  
+   
+    return 0;  
+}  
+Que(5)What is the use of a doubly-linked list when compared to that of a singly
+linked list?
+Ans=Each node of a doubly linked lists have two pointers which contains the address of both previous and next node. 
+Due to this it has its own usages over singly linked list. Its usages are as follows:
+1) It is can be used to implement stacks as well as heaps and binary trees whereas Singly linked list are generally used
+ for implementation of stacks.
+2) It allows two way traversal.
+
+
+Que(6)=What is the difference between an Array and Stack?
+Ans=An Array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the 
+same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base 
+value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+A Stack is a linear data structure in which elements can be inserted and deleted only from one side of the list, called the top.
+ A stack follows the LIFO (Last In First Out) principle, i.e., the element inserted at the last is the first element to come out.
+ The insertion of an element into the stack is called push operation, and the deletion of an element from 
+the stack is called pop operation. In stack, we always keep track of the last element present in the list with a pointer called top.
+
+
+Que(7)What are the minimum number of Queues needed to implement the priority
+queue?
+Ans=2 queues. one is used for storing data... another is used for priorities. Priority queues r applied using 2-D array 
+where it has two rows one for element and second for priority ,so minimum numbers of queues are needed to implement
+ are two.
+
+
+Que(8)What are the different types of traversal techniques in a tree?
+Ans=Different types of tree traversal are as follows :
+1)Inorder Traversal : Inorder Traversal is the one the most used variant of DFS(Depth First Search) Traversal of the tree.
+In this method the left subtree of a node is visited first, then the node is visited and then the right subtree is visited.These 
+steps are repeated recursively until all the nodes are visited.
+2)Preorder Traversal : Preorder Traversal is another variant of DFS. In this method the node is visited first, then the left 
+subtree of the node is visited and then the right subtree of the node is visited.These steps are repeated recursively until all 
+the nodes are visited.
+3) Postorder Traversal: It is opposite of preorder. In this method the left subtree of node is visited first, then the right subtree 
+of the node is visited and then  node is visited.These steps are repeated recursively until all the nodes are visited.
+4) Level Order Traversal :  Level order traversal follows BFS(Breadth-First Search) to visit/modify every node of the tree. 
+In this method  we will visit all the nodes present at the same level one-by-one from left to right and then move to the next 
+level to visit all the nodes of that level
+
+
+Que(9)Why it is said that searching a node in a binary search tree is efficient than that of
+a simple binary tree?
+Ans=A binary tree is made of nodes, where each node contains a "left" pointer, a "right" pointer, and a data element.
+ The "root" pointer points to the topmost node in the 
+tree. The left and right pointers recursively point to smaller "subtrees" on either side. A null pointer represents a binary tree 
+with no elements -- the empty tree. The formal recursive definition is: a binary tree is either empty 
+(represented by a null pointer), or is made of a single node, where the left and right pointers (recursive definition ahead) each
+ point to a binary tree.
+
+A binary search tree (BST) or "ordered binary tree" is a type of binary tree where the nodes are arranged in order: for 
+each node, all elements in its left subtree are less to the node (<), and all the elements in its right subtree are greater than 
+the node (>)
+
+
+Que(10) What are the applications of Graph DS?
+Ans=In Computer science graphs are used to represent the flow of computation.
+Google maps uses graphs for building transportation systems, where intersection of two(or more) roads are considered 
+to be a vertex and the road connecting two vertices is considered to be an edge, thus their navigation system is based 
+on the algorithm to calculate the shortest path between two vertices.
+In Facebook, users are considered to be the vertices and if they are friends then there is an edge running between them.
+ Facebook’s Friend suggestion algorithm uses graph theory. Facebook is an example of undirected graph.
+In World Wide Web, web pages are considered to be the vertices. There is an edge from a page u to other page v if there 
+is a link of page v on page u. This is an example of Directed graph. It was the basic idea behind Google Page Ranking 
+Algorithm.
+In Operating System, we come across the Resource Allocation Graph where each process and resources are considered to 
+be vertices. Edges are drawn from resources to the allocated process, or from requesting process to the requested resource.
+ If this leads to any formation of a cycle then a deadlock will occur.
+
